@@ -1,11 +1,11 @@
 import random
 
-a11 = 1
-a12 = -1
-a21 = 1
-a22 = 1
-b1 = 7
-b2 = 5
+a11 = int(input("a11: "))
+a12 = int(input("a12: "))
+b1 = int(input("b1: "))
+a21 = int(input("a21: "))
+a22 = int(input("a22: "))
+b2 = int(input("b2: "))
 x = 0
 y = 0
 
