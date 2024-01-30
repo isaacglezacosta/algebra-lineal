@@ -1,11 +1,11 @@
 import random
 
-a11 = int(input("a11: "))
-a12 = int(input("a12: "))
-b1 = int(input("b1: "))
-a21 = int(input("a21: "))
-a22 = int(input("a22: "))
-b2 = int(input("b2: "))
+a11 = random.randint(-10, 10)
+a12 = random.randint(-10, 10)
+b1 = random.randint(-10, 10)
+a21 = random.randint(-10, 10)
+a22 = random.randint(-10, 10)
+b2 = random.randint(-10, 10)
 x = 0
 y = 0
 
@@ -13,11 +13,11 @@ def sistema_ecuaciones(a11, a12, a21, a22, b1, b2, x, y):
     if (a22 * a11 - a12 * a21) == 0:
         print("No tiene solución")
     elif a12 == 0 and a22 == 0:
-        x = b1 / a11
+        x = (b1 + b2) / (a11 + a21)
         print("El sistema solo tiene una incógnita")
         print(f"x: {x}")
     elif a11 == 0 and a21 == 0:
-        y = b1 / a12
+        y = (b1 + b2) / (a12 + a22)
         print("El sistema solo tiene una incógnita")
         print(f"y: {y}")
     elif a12 == 0 and all(i != 0 for i in [a11, a21, a22]):
@@ -45,6 +45,11 @@ def sistema_ecuaciones(a11, a12, a21, a22, b1, b2, x, y):
         y = (b1 - a11 * x) / a12
         print(f"x: {x}")
         print(f"y: {y}")
-    return
+
+if (a22 * a11 - a12 * a21) != 0:
+    print("El sistema tiene una única solución")
+
+print(f"{a11}x + {a12}y = {b1}")
+print(f"{a21}x + {a22}y = {b2}")
 
 sistema_ecuaciones(a11, a12, a21, a22, b1, b2, x, y)
